@@ -1,7 +1,10 @@
 # Shopcrawl Online Store App
 
-Shopcrawl is an innovative online store app that aims to revolutionize the way users shop online. The app offers a diverse range of products across different categories, providing customers with a convenient and enjoyable shopping experience.
 ![Group 3](https://github.com/allenamaya/Shopcrawl-online-mart/assets/126647363/df945a4b-7084-4778-bdaf-2535fc8869cc)
+
+
+Shopcrawl is an innovative online store app that aims to revolutionize the way users shop online. The app offers a diverse range of products across different categories, providing customers with a convenient and enjoyable shopping experience.
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
