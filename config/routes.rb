@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   
   get 'clients/new' 
   resources :clients, only: [:new, :create]
-  
+
   get 'sessions/new'
   get 'sessions/destroy'
   resource :sessions, only: [:create]
+  
+   resources :searches, only: [:new, :create, :show]
 end

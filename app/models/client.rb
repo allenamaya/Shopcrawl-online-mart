@@ -1,5 +1,7 @@
 
 class Client < ApplicationRecord
+ has_many :searches
+
   validates :email, presence: true, uniqueness: true
   validates :password, length: { minimum: 5, allow_nil: true }
 

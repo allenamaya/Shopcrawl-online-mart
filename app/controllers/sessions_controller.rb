@@ -7,7 +7,7 @@ def create
 
     if @client && @client.is_password?(client _params[:password])
         session[:client_id] = @client.id
-        reirect_to posts _path
+        redirect_to posts _path
     else
         flash.now[notice] = "Invalid email or password"
         render :new
