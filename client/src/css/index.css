@@ -1,6 +1,59 @@
+body{
+    text-align: center;
+    font-family: 'Kumbh Sans', sans-serif; 
+    font-family: 'League Spartan', sans-serif; 
+}
+.navbar{
+    background-color: #51A8AA;
+}
+.nav-item, .nav-link{
+    color: black;
+    font-size: 18px;
+}
+.dropdown-menu{
+    background-color: #51A8AA;
+}
+.nav-link{
+    margin-right: 10px;
+}
+.main-content{
+    margin-top: 100px;
+}
 .products{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+.products > * {
+    margin: 20px;
+}
+a{
+    text-decoration: none;
+    color: inherit
+}
+.product{
+    color: aliceblue;
+    background-color: #2C4B79;
+    border-color: aliceblue;
+}
+.product-img{
+    background-color: #2C4B79;
+    /* border-radius: 30px; */
+}
+.app-brand{
+    background: url('../images/Shopcrawl.png');
+    width: 20px;
+    height: 50px;
+    display: block;
+}
+.account-btn{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-height: fit-content;
+}
+.account-btn > i{
+    font-size: 30px;
 }
