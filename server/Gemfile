@@ -40,3 +40,5 @@ gem "open-uri", "~> 0.3.0"
 gem "net-http", "~> 0.3.2"
 
 gem "json", "~> 2.6"
+
+gem "async", "~> 2.6"
