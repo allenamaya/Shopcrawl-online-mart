@@ -3,6 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import Loading from "./loading/Loading"
 import ProductsContext from "./context/ProductsContext"
 import { useState } from "react"
+import Products from "./products/Products"
 
 const App = () => {
     const [products, setProducts] = useState(null)
@@ -11,11 +12,14 @@ const App = () => {
         <div>
             
                 <ProductsContext.Provider value={{products, setProducts}}>
-                    <Routes>
-                        <Route exact path='/' element={<Search />}/>
-                        <Route exact path='/search' element={<Search />}/>
+                <Search />
+                <div className="main-content">
+                     <Routes>
+                        <Route exact path='products' element={<Products />}></Route>
                         <Route exact path='loading' element={<Loading />}/> 
                     </Routes>
+                </div>
+                   
                 </ProductsContext.Provider> 
             
         </div>
