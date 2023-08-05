@@ -1,7 +1,67 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+puts "seeding data ..........................."
+
+john = Customer.create!(name: "John", email: "john@gmail.com", password: "doe", password_confirmation: "doe")
+john.search_histories.create(title:"tv")
+john.search_histories.create(title:"iphone")
+john.search_histories.create(title:"samsung")
+john.search_histories.create(title:"ipad")
+
+maggie = Customer.create!(name: "Maggie", email: "maggie@gmail.com", password: "doe", password_confirmation: "doe")
+maggie.search_histories.create(title:"samsung")
+maggie.search_histories.create(title:"cuttlery")
+maggie.search_histories.create(title:"lip balm")
+
+Fashion.create(name: "t-shirt", image: "https://m.media-amazon.com/images/I/715gSUR3r5L._AC_UY1100_.jpg")
+Fashion.create(name: "dress", image: "https://www.nicepng.com/png/detail/260-2605615_marvelous-designer-dresses-garment-files-fabric-presets-designer.png")
+Fashion.create(name: "shirt", image: "https://m.media-amazon.com/images/I/71ts9CewHqL._SL1500_.jpg")
+Fashion.create(name: "cap", image: "https://www.pngitem.com/pimgs/m/385-3851233_cap-baseball-cap-hd-png-download.png")
+Fashion.create(name: "jeans", image: "https://images.yaoota.com/58kLCv-_0XZUEOBei4UoWmTQyxA=/trim/fit-in/500x500/filters:quality(80)/yaootaweb-production-ke/media/crawledproductimages/9b8b436457ed6275755b0fc7bccc0a531431698f.jpg")
+Fashion.create(name: "hoodie", image: "https://w0.peakpx.com/wallpaper/847/236/HD-wallpaper-hoodie-anonymus-boy-sitting-aside-alone-hoodie-anonymus-artist-artwork-digital-art.jpg")
+Fashion.create(name: "jacket", image: "https://images.pexels.com/photos/887898/pexels-photo-887898.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+Fashion.create(name: "shorts", image: "https://assets.adidas.com/images/w_600,f_auto,q_auto/7cf757db10e041748286a9de016e0989_9366/Saturday_Shorts_HD_Grey_FI2915_01_laydown.jpg")
+Fashion.create(name: "socks", image: "https://www.pngitem.com/pimgs/m/413-4131211_pair-of-socks-hd-png-download.png")
+Fashion.create(name: "tracksuit", image: "https://c0.wallpaperflare.com/preview/429/734/454/woman-in-grey-adidas-hoodie-and-pants-photo.jpg")
+Fashion.create(name: "sweater", image: "https://www.pngitem.com/pimgs/m/328-3280724_orange-sweater-hd-png-download.png")
+
+Electronic.create(name: "iphone", image: "https://images.news18.com/ibnlive/uploads/2021/10/apple-iphone-13-pro-review-164231980316x9.jpeg")
+Electronic.create(name: "ipad", image: "https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGFwcGxlJTIwaXBhZCUyMHByb3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80")
+Electronic.create(name: "headphones", image: "https://biasharaplace.co.ke/wp-content/uploads/2021/03/Sennheiser-HD-450-Bluetooth-Headphones.jpg")
+Electronic.create(name: "macbook", image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9vayUyMHByb3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80")
+Electronic.create(name: "lenovo", image: "https://nairobicomputershop.co.ke/media/cache/4a/19/4a195045b795cf8ea41d37c3b02bce93.jpg")
+Electronic.create(name: "smartphone", image: "https://solaroidenergy.com/wp-content/uploads/2023/03/how-much-is-oppo-a73-in-nigeria.jpg")
+Electronic.create(name: "speakers", image: "https://audioengine.com/wp-content/uploads/2020/06/2-2.jpg")
+Electronic.create(name: "fridge", image: "https://images.africasokoni.co.ke/bruhm/HD-663FWEN.jpg")
+Electronic.create(name: "tv", image: "https://jambopay.market/image/cache/catalog/Seller_1322/TVS/1-20230405125552-550x550h.jpeg")
+Electronic.create(name: "microwave", image: "https://www.pngmart.com/files/6/Microwave-Oven-PNG-Transparent-HD-Photo.png")
+Electronic.create(name: "microphones", image: "https://images.pexels.com/photos/164829/pexels-photo-164829.jpeg?cs=srgb&dl=pexels-pixabay-164829.jpg&fm=jpg")
+
+Deal.create(name: "samsung galaxy", image: "https://www.gizbot.com/images/2019-02/samsung-galaxy-s10-plus_155107488940.jpg")
+Deal.create(name: "vitron", image: "https://images.yaoota.com/IC4ZyoD1XU0jG_N5wPQifxSbO_8=/trim/fit-in/500x500/filters:quality(80)/yaootaweb-production-ke/media/crawledproductimages/5abac30c662d8b92ae488e26358fbab0839a5784.jpg")
+Deal.create(name: "nivea", image: "https://images-us.nivea.com/-/media/nivea/local/in/boday_page/3_banner_3080x806.png?rx=1304&ry=0&rw=1452&rh=805")
+Deal.create(name: "nike", image: "https://cdn.pixabay.com/photo/2016/11/19/18/06/feet-1840619_1280.jpg")
+Deal.create(name: "abs rollers", image: "https://drtrust.in/cdn/shop/products/dr-trust-usa-abs-blaster-best-abs-roller-wheel-exercise-wheel-311-30090829758510_700x700.jpg?v=1682057784")
+Deal.create(name: "dumbbells", image: "https://e1.pxfuel.com/desktop-wallpaper/52/885/desktop-wallpaper-dumbbell-53135-dumbbells.jpg")
+Deal.create(name: "gaming keyboard", image: "https://i.pcmag.com/imagery/reviews/01LnwPzDtlJP9XzLBk9qdbq-1.fit_lim.size_840x473.v1613506210.png")
+Deal.create(name: "gaming mouse", image: "https://e0.pxfuel.com/wallpapers/270/13/desktop-wallpaper-razer-basilisk-ultimate-gaming-mouse-review-nag.jpg")
+Deal.create(name: "gaming laptop", image: "https://nairobicomputershop.co.ke/media/cache/30/59/3059729ea5192e8b5b2a475a3711ccbc.jpg")
+Deal.create(name: "fridge", image: "https://cdn.homecrux.com/wp-content/uploads/2016/01/Samsung%E2%80%99s-new-smart-refrigerator-at-CES-2016_3.jpg")
+
+HomeProduct.create(name: "toys", image: "https://www.nicepng.com/png/detail/75-756650_kids-toys-png-clipart-transparent-download-baby-toys.png")
+HomeProduct.create(name: "fashion", image: "https://c4.wallpaperflare.com/wallpaper/699/664/33/model-fashion-women-wallpaper-preview.jpg")
+HomeProduct.create(name: "dining", image: "https://c1.wallpaperflare.com/preview/954/460/914/glass-table-white-formal.jpg")
+HomeProduct.create(name: "kitchen", image: "https://cdn.mos.cms.futurecdn.net/FLUdjBcGYUorZjbwaikCuh.jpg")
+HomeProduct.create(name: "health", image: "https://wallpaperaccess.com/full/136949.jpg")
+HomeProduct.create(name: "beauty", image: "https://w0.peakpx.com/wallpaper/265/405/HD-wallpaper-beauty-and-fashion-model-girl-makeup-graph.jpg")
+HomeProduct.create(name: "jewelery", image: "https://wallpapers.com/images/hd/jewelry-set-of-necklace-earrings-2qcc1cyrkc3g58eb.jpg")
+HomeProduct.create(name: "shoes", image: "https://esq.h-cdn.co/assets/16/29/1600x900/hd-aspect-1469062506-air-jordan-31.jpg")
+HomeProduct.create(name: "fitness", image: "https://wallpaperaccess.com/full/1087594.jpg")
+HomeProduct.create(name: "tablets", image: "https://www.mombasacomputers.com/wp-content/uploads/2022/02/Lenovo-M10-Tab-HD-10.1-Inch-4GB-RAM-64GB-ROM-Wi-Fi-4G-Android-Tablet.jpg")
+HomeProduct.create(name: "smartwatches", image: "https://i.ebayimg.com/images/g/t5EAAOSw3zFkiIJ6/s-l1200.jpg")
+HomeProduct.create(name: "gaming", image: "https://wallpapercave.com/wp/wp4198950.jpg")
+HomeProduct.create(name: "smartphones", image: "https://i0.wp.com/www.smartprix.com/bytes/wp-content/uploads/2022/04/New-year-new-phone-Top-5-smartphones-to-launch-in-2022-scaled.jpg?ssl=1&quality=80&w=f")
+HomeProduct.create(name: "snacks", image: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c25hY2tzfGVufDB8fDB8fHww&w=1000&q=80")
+HomeProduct.create(name: "grocery", image: "https://png.pngtree.com/thumb_back/fh260/background/20230424/pngtree-full-grocery-store-display-full-of-different-types-of-fruits-and-image_2558583.png")
+HomeProduct.create(name: "kindle", image: "https://i.guim.co.uk/img/media/f8c4a8616a60adf4f5f4c8dd509a9537eb059b0a/0_0_2100_1260/master/2100.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=a8ad8173b278c36f3ee91c60529b927f")
+HomeProduct.create(name: "cosmetics", image: "https://c4.wallpaperflare.com/wallpaper/414/818/456/mascara-shadows-cosmetics-blush-wallpaper-preview.jpg")
+
+puts '..................... done seeding!'

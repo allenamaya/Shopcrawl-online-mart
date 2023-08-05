@@ -2,6 +2,10 @@ class ProductsController < ApplicationController
 
     def search_products
         search_term = params[:search_term].split(' ').join
+        if session.include? :customer_id 
+            customer = Customer.find(session[:customer_id])
+            customer.search_histories.create(title: search_term)
+        end
         # search_term = 'tv'
         products = scrape_sites(search_term)
         render json: products, status: :ok 
@@ -24,7 +28,7 @@ class ProductsController < ApplicationController
             {   
                 site: "EBAY",
                 image: item.css('.s-item__image-wrapper img').map{|elm| elm['src']}[0],
-                title: item.css('.s-item__title span').text,
+                title: item.css('.s-item__title span').text[0..50],
                 sub_title: item.css('.s-item__subtitle').text,
                 price: item.css('.s-item__price').text.split('$')[1].to_i * 142,
                 shipping_cost: item.css('.s-item__shipping').text.split(" ")[0].to_s.split("$")[1].to_i,
@@ -43,7 +47,7 @@ class ProductsController < ApplicationController
             {   
                 site: "JUMIA",
                 image: item.css('.img-c img').map{|elem| elem["data-src"]}[0],
-                title: item.css('div.info > h3.name').text,
+                title: item.css('div.info > h3.name').text[0..50],
                 price: item.css('div.info > .prc').text.to_s.split(" ")[1].to_s.split(',').join('').to_i,
                 link: "https://www.jumia.co.ke".to_s + item.css('a').map{|elem| elem['href']}[0].to_s  
             }
@@ -60,7 +64,7 @@ class ProductsController < ApplicationController
         items = items.map do |item|
             {   
                 site: "JIJI",
-                title: item.css('.b-advert-title-inner').text,
+                title: item.css('.b-advert-title-inner').text[0..50],
                 image: item.css('.b-list-advert-base__img picture > source').map {|elem| elem['srcset']}[0],
                 price: item.css('.qa-advert-price').text.split(" ")[1].split(',').join.to_i,
                 link: "https://jiji.co.ke".to_s + item.css('a').map{|elm| elm['href']}[0].to_s,
@@ -75,7 +79,7 @@ class ProductsController < ApplicationController
         items = doc.css('.search-card-item')
         items = items.map do |item|
             {   
-                title: item.css('h1').text,
+                title: item.css('h1').text[0..50],
                 image: item.css('img').map{|elm| elm['src']}[0],
                 link: item['href'].to_s,
                 price: item.css('div.manhattan--price-sale--1CCSZfK').text.split('KES')[1].split(',').join.to_i

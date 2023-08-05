@@ -1,13 +1,17 @@
 import React, { useContext, useState } from 'react'
-import {Form, Button, Navbar, Offcanvas, Nav, NavDropdown} from 'react-bootstrap'
+import {Form, Button, Navbar, Offcanvas, Nav, Dropdown} from 'react-bootstrap'
 import {useNavigate} from 'react-router-dom'
-import _ from 'lodash'
+import {LinkContainer} from 'react-router-bootstrap'
+
+import Logo from '../images/logo.png'
+
 
 import ProductsContext from './context/ProductsContext'
 
 const Search = () => {
-  const {products, setProducts} = useContext(ProductsContext)
+  const { setProducts, currentCustomer, setCurrentCustomer} = useContext(ProductsContext)
   const navigate = useNavigate()
+
   const [formData, setFormData] = useState(
       {
         search_term: " "
@@ -15,102 +19,165 @@ const Search = () => {
     )
   async function searchItem(event){
     event.preventDefault();
-    navigate('/loading')
-    let response = await fetch("/search", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formData)
-    })
-    if(response.ok){
-     let  data = await response.json();
-     console.log(data)
-     setProducts([...data])
-    }
-    formData.search_term = " "
+    if(formData.search_term === " "){
+      alert("Enter a search term")
+      navigate("/error")
+    }else{
+      navigate('/loading')
+      let response = await fetch("/search", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      })
+      if(response.ok){
+      let  data = await response.json();
+      console.log(data)
+      setProducts([...data])
+      }
+      formData.search_term = " "
+      }
+    
   }
   
-
   function handleChange(event){
     setFormData({...formData, [event.target.name]: event.target.value})
   }
 
-  function sortPriceHighToLow(){
-    setProducts(_.sortBy(products, 'price').reverse())
+  async function logOut(){
+    let response = await fetch("/logout", {method: "DELETE"})
+    setCurrentCustomer(null);
+    console.log(response)
+    navigate("/");
   }
 
-  function sortPriceLowToHigh(){
-    setProducts(_.sortBy(products, 'price'))
-  }
-    
-  return (
-    <div>
-    <Navbar expand="lg" fixed='top'>
-      <Navbar.Brand className='app-brand'><h2>Shopcrawl</h2></Navbar.Brand>
-      <Navbar.Toggle></Navbar.Toggle>
-      <Navbar.Offcanvas>
-      <Offcanvas.Header closeButton>
-                <Offcanvas.Title >
-                  Shopcrawl
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-        <Offcanvas.Body>
-        <Nav className="justify-content-center flex-grow-1">
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
-                  <NavDropdown
-                    title="Sort"
-                    id={`offcanvasNavbarDropdown-expand}`}
-                  >
-                    <NavDropdown.Item >
-                      <Button variant="warning" onClick={sortPriceHighToLow}>Price High To Low</Button>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item >
-                      <Button variant="warning" onClick={sortPriceLowToHigh}>Price Low To High</Button> 
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item >
-                      <Button variant='warning'>Rating</Button>
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                  
-                </Nav>
-          <Form onSubmit={searchItem} className='d-flex'>
-          <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    value={formData.search_term}
-                    onChange={handleChange}
-                    name="search_term"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-          <Button variant="warning" onClick={searchItem}>Search</Button>
-        </Form>
   
-           <Nav >
-           <Button className='account-btn'>
-                <i class="bi bi-person-fill"></i>
-                  <NavDropdown
-                  title="Account"
-                  id="navbarScrollingDropdown"
-                  >
-                  <NavDropdown.Item>
-                    <Button variant='warning'>Sign In</Button>
-                  </NavDropdown.Item>
-
-                  </NavDropdown>
-                  </Button>
-           </Nav>
-        </Offcanvas.Body>
-        
-      </Navbar.Offcanvas>
-        
-    </Navbar>
+      return (
+        <div>
+        <Navbar expand="lg" fixed='top'>
+          
+          <Navbar.Toggle></Navbar.Toggle>
+          <Navbar.Offcanvas className='me-auto'>
+          <Offcanvas.Header closeButton>
+                    <Offcanvas.Title >
+                      Shopcrawl
+                    </Offcanvas.Title>
+          </Offcanvas.Header>
+            <Offcanvas.Body>
+            {currentCustomer ? (
+            <Navbar.Brand className='app-brand'>
+              <h1><i class="bi bi-person-check"></i> {currentCustomer.name}</h1>
+            </Navbar.Brand>
+          ) : (
+            <Navbar.Brand className='app-brand'>
+            <Nav>
+              <img src={Logo} alt='Logo' className='brand-img'/>
+              <h3 className='logo-title'>Shopcrawl</h3>
+            </Nav>
+            
+            </Navbar.Brand>
+          )}
+          
+            <Nav className="justify-content-center flex-grow-1">
+                {/* */}
+                  <Form onSubmit={searchItem} className='d-flex' style={{width: "50%", height: '80%'}}>
+                  <Form.Control
+                            type="search"
+                            placeholder="Search"
+                            value={formData.search_term}
+                            onChange={handleChange}
+                            name="search_term"
+                            className="me-2"
+                            aria-label="Search"
+                          />
+                  <Button variant="warning" onClick={searchItem}>Search</Button>
+                </Form>
+              </Nav>
+             
       
-    </div>
-  )
+               
+               {currentCustomer ? (
+                <>
+                  
+                    <LinkContainer to="/profile">
+                      <Nav.Link>
+                      <Button style={{marginRight: "20px", background: "rgb(43,16,55)", border: "none"}} >Profile</Button></Nav.Link>
+                    </LinkContainer>
+ 
+                    <LinkContainer to='/history' >
+                    <Nav.Link>
+                       <Button variant='warning' style={{marginRight: "20px"}}>My History</Button>
+                    </Nav.Link>
+                  </LinkContainer>
+                  
+                  
+                  <Button variant='success' onClick={logOut} style={{background: "rgb(128,122,5)"}}>Logout</Button>
+               </>
+                
+               ) : (<Nav className='me-auto'>
+                {/* <Button className='account-btn' variant='warning'> */}
+                    {/* <i class="bi bi-person-fill"></i> */}
+                    <Dropdown >
+                    <Dropdown.Toggle className='account' variant='dark'><i class="bi bi-person" ></i>Account</Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        <Dropdown.Item>
+                        <LinkContainer to='/sign-in'>
+                          <Nav.Link>
+                            Sign In
+                          </Nav.Link>
+                        </LinkContainer>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <LinkContainer to='/register'>
+                          <Nav.Link>
+                            Register
+                          </Nav.Link>
+                        </LinkContainer>
+                      </Dropdown.Item>
+                      </Dropdown.Menu>
+                      
+                      </Dropdown>
+                {/* </Button> */}
+                </Nav>
+               )}
+               
+               
+            </Offcanvas.Body>
+            
+          </Navbar.Offcanvas>
+            
+        </Navbar>
+        <Nav
+      activeKey="/"
+      className='nav-home'
+    >
+      <Nav.Item>
+        <LinkContainer to='/'>
+            <Nav.Link><i class="bi bi-house"></i>Home</Nav.Link>
+        </LinkContainer>
+            
+      </Nav.Item>
+      <Nav.Item>
+        <LinkContainer to='/deals'>
+            <Nav.Link><i class="bi bi-fire"></i>Deals</Nav.Link>
+        </LinkContainer> 
+      </Nav.Item>
+      <Nav.Item>
+        <LinkContainer to='/electronics'>
+            <Nav.Link><i class="bi bi-laptop"></i>Electronics</Nav.Link>
+        </LinkContainer> 
+      </Nav.Item>
+      <Nav.Item>
+        <LinkContainer to='/fashion'>
+            <Nav.Link><i class="bi bi-handbag"></i>Fashion</Nav.Link>
+        </LinkContainer> 
+      </Nav.Item>
+    </Nav>
+        </div>
+      )
+    
+  
 }
 
 export default Search

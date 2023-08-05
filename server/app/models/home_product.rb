@@ -1,0 +1,2 @@
+class HomeProduct < ApplicationRecord
+end

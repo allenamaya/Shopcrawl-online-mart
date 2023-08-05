@@ -6,8 +6,10 @@ const Loading = () => {
     const {products} = useContext(ProductsContext)
     const navigate = useNavigate()
       return (
-        <div>
-          <h1>Getting your products</h1>
+        <div className='loading'>
+          <div class="ring">Loading
+            <span className='loading'></span>
+          </div>
           {products ? navigate("/products") : null}
         </div> 
     )   

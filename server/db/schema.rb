@@ -10,7 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_27_131214) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_04_124659) do
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "deals", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "electronics", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fashions", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "home_products", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "search_histories", force: :cascade do |t|
+    t.string "title"
+    t.integer "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "vehicles", force: :cascade do |t|
     t.string "title"
     t.string "stock_type"
