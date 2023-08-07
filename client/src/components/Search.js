@@ -91,7 +91,7 @@ const Search = () => {
                             className="me-2"
                             aria-label="Search"
                           />
-                  <Button variant="warning" onClick={searchItem}>Search</Button>
+                  <Button variant="warning" onClick={searchItem} style={{fontWeight: "bold"}}><i class="bi bi-search"></i></Button>
                 </Form>
               </Nav>
              
