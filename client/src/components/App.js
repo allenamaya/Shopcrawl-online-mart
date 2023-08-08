@@ -14,9 +14,7 @@ import Fashion from "./fashion/Fashion"
 import Electronic from "./electronics/Electronic"
 import Deals from "./deals/Deals"
 import Error from "./error/Error"
-
-
-
+import LoggingOut from "./logging_out/LoggingOut"
 
 
 const App = () => {
@@ -77,7 +75,7 @@ const App = () => {
     }, [])
 
     return (
-        <div>
+        <div className="app">
             
                 <ProductsContext.Provider value={{ currentCustomer, setCurrentCustomer, products, setProducts}}>
                 <Search />
@@ -94,6 +92,7 @@ const App = () => {
                         <Route exact path='/deals' element={<Deals deals={deals}/>} />
                         <Route exact path='/electronics' element={<Electronic electronics={electronics}/>} />
                         <Route exact path="/error" element={<Error />} />
+                        <Route exact path='/logging-out' element={<LoggingOut />} />
                     </Routes>
                    
                 </div>

@@ -5,13 +5,13 @@ const inBeauty = () => {
     <div className='popular-container'>
         <h3>Frequently purchased in beauty</h3>
         <div className='popular-products'>
-            <div><img src='https://beautybliss.co.ke/wp-content/uploads/2020/10/GBB945.jpg' alt='' /></div>
-            <div><img src='https://pcreate-spaces.sgp1.digitaloceanspaces.com/2022/06/Organic-Hub-White-Beauty-HD-Cream.jpg' alt='' /></div>
-            <div><img src='https://glowbeautys.com/wp-content/uploads/2020/09/C-scaled.jpg' alt='' /></div>
-            <div><img src='https://arenagold.com.pk/wp-content/uploads/2022/01/HD-PRO-BEAUTY-CREAM.png' alt='' /></div>
-            <div><img src='https://firstladylondon.com/wp-content/uploads/2022/03/First-lady-HD-lightening-strong-face-cream-.jpg' alt='' /></div>
-            <div><img src='https://happybeautyau.com/images/product/13164-HD%20Hydrating%20Cream.jpeg' alt='' /></div>
-            <div><img src='https://cdn.shopify.com/s/files/1/0550/8012/4479/products/1_bdca678d-4d45-4543-a2fd-f897004f1f30.jpg?v=1668603467&width=533' alt='' /></div>
+            <div><img src='https://images.unsplash.com/photo-1512496015851-a90fb38ba796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80' alt='' /></div>
+            <div><img src='https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80' alt='' /></div>
+            <div><img src='https://images.unsplash.com/photo-1567433517180-d3e56cf7f81e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80' alt='' /></div>
+            <div><img src='https://plus.unsplash.com/premium_photo-1678932075236-fb53423e3538?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80' alt='' /></div>
+            <div><img src='https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80' alt='' /></div>
+            <div><img src='https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80' alt='' /></div>
+            <div><img src='https://plus.unsplash.com/premium_photo-1678449465143-836001feabdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80' alt='' /></div>
 
         </div>
     </div>

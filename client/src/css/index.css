@@ -1,15 +1,15 @@
 body{
     text-align: center;
-    /* font-family: 'Kumbh Sans', sans-serif; 
-    font-family: 'Trirong', sans-serif;  */
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 20px;
     position: relative;
+    
 }
 .navbar{
     background-color: #51A8AA;
 }
 .nav-item, .nav-link{
-    color: rgb(94, 57, 4);
+    color: rgb(65, 3, 80);
     font-size: 18px;
 }
 
@@ -56,8 +56,8 @@ a{
     justify-content: flex-start;
 }
 .product-image img{
-    width: 15rem;
-    height: 200px;
+    width: 200px;
+    height: 230px;
     border-radius: 15px;
 }
 .product-details{
@@ -77,7 +77,7 @@ a{
     width: 20px;
     height: 50px;
     display: block;
-    font-family: "Trirong", sans-serif;
+    
 }
 .account{
     margin-right: 10px;
@@ -186,7 +186,7 @@ a{
   text-align: center;
   width: 100%;
   bottom: 0;
-  height: 380px;
+  height: 400px;
 }
 .footer-value{
   display: flex;
@@ -289,14 +289,7 @@ a{
   width: 100%;
   margin-bottom: 150px;
 }
-.home-banner{
-   background: url(https://e1.pxfuel.com/desktop-wallpaper/996/973/desktop-wallpaper-online-shopping-monochrome-online-business-concepts-online-store-concepts-laptop-with-resolution-2880x1800-high-quality-online-store.jpg);
-   background-size: cover;
-   background-repeat: no-repeat;
-}
-.home-banner > *{
-  margin: auto;
-}
+
 .loading{
   padding-bottom: 600px;
 }
@@ -308,13 +301,13 @@ a{
   justify-content: center;
 }
 .fProducts-display > * {
-  width: 300px;
-  margin: 5px;
+  width: 280px;
+  margin: 10px;
+  border-radius: 3.5%;
 }
 .fProduct-image{
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
+  width: 280px;
+  height: 320px;
 }
 .histories-container{
   padding-bottom: 300px;
@@ -330,36 +323,38 @@ a{
   margin-top: 30px;
 }
 .home-products{
+  margin-top: 250px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .home-product{
   width: 300px;
-  height: 350px;
-  margin: 5px;
+  height: 320px;
+  margin: 10px;
+}
+
+
+a:hover{
+  color:#51A8AA;
 }
 .home-product img{
-  height: 250px;
   width: 300px;
-  height: 300px;
-  border-radius: 50%;
+  height: 320px;
 }
+
+
 .fProduct-link:hover > *{
-  background-color: rgb(230, 229, 229);
+  background-color: rgb(235, 230, 230);
 }
 .error-page{
   padding-bottom: 400px;
 }
-.popular-container{
-  margin-top: 50px;
-  padding: 30px;
-  width: 80%;
-  margin: auto;
-}
+
 .popular-container > * {
-  margin: 20px;
+  margin-top: 20px;
   
 }
 .popular-products{
@@ -369,13 +364,149 @@ a{
   justify-content: center;
 }
 .popular-products img{
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
+  width: 300px;
+  height: 350px;
+  border-radius: 3.5%;
 }
 .popular-products > * {
-  margin: 20px;
+  margin: 10px;
 }
+.user-dropdown{
+  font-size: 20px;
+}
+.user-dropdown-menu{
+  margin-right: 180px;
+}
+.user-dropdown-menu > *{
+  background-color: #D9D9D9;
+}
+.user-dropdown-menu a{
+  color: #2C4B79;
+}
+.logging-out{
+  padding-bottom: 500px;
+}
+.cusutomer-login{
+  font-size: 16px;
+  margin-right: 0px;
+}
+
+/* Logging out */
+.logging-out h1 {
+  margin-top: 150px;
+  padding: 0;
+  font-family: ‘Arial Narrow’, sans-serif;
+  font-weight: 100;
+  font-size: 1.1em;
+  color: #053f4e;
+  font-size: 25px;
+}
+
+.logging-out span {
+  position: relative;
+  top: 0.63em;  
+  display: inline-block;
+  text-transform: uppercase;  
+  opacity: 0;
+  transform: rotateX(-90deg);
+}
+
+.let1 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.let2 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+.let3 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+.let4 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.5s;
+
+}
+
+.let5 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.let6 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.7s;
+}
+
+.let7 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.8s;
+}
+
+.let8 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.9s;
+}
+.let9 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 2.0s;
+}
+.let10 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 2.1s;
+}
+.let11{
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 2.2s;
+}
+.let12 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 2.3s;
+}
+.let13 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 2.4s;
+}
+.let14 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+.let15 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 2.6s;
+}
+.space{
+  padding: 20px;
+}
+
+
+@keyframes drop {
+    10% {
+        opacity: 0.5;
+    }
+    20% {
+        opacity: 1;
+        top: 3.78em;
+        transform: rotateX(-360deg);
+    }
+    80% {
+        opacity: 1;
+        top: 3.78em;
+        transform: rotateX(-360deg);
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        top: 6.94em
+    }
+}
+
 .ring
 {
   position:absolute;

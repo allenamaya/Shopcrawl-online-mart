@@ -33,9 +33,6 @@ const Products = () => {
                     <Button variant="warning" onClick={sortPriceLowToHigh}>Price Low To High</Button> 
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item >
-                    <Button variant='warning'>Rating</Button>
-                  </NavDropdown.Item>
                 </NavDropdown>
           </Nav>
           </div>

@@ -1,25 +1,34 @@
 import React from 'react'
 import Stores from './stores/Stores'
 import HomeProducts from './home_products/HomeProducts'
-import { Container } from 'react-bootstrap'
+import { Container, Carousel } from 'react-bootstrap'
 import { International, InHome, InBeauty } from './frequently_purchased'
-
+import Welcome from '../../images/welcome.jpg'
+import Weekly from '../../images/weekly.jpg'
+import OneSite from '../../images/onesite.jpg'
+import Customer from '../../images/customer.jpg'
 
 
 const Home = ({products}) => {
   return (
       <div className='home'>
         <div className='banner home-banner'>
-          <h1>Welcome to Shopcrawl!</h1>
+          <Carousel fade interval= {1200} >
+            <Carousel.Item ><img src={Welcome} alt=''/></Carousel.Item>
+            <Carousel.Item ><img src={Weekly} alt=''/></Carousel.Item>
+            <Carousel.Item ><img src={OneSite} alt=''/></Carousel.Item>
+            <Carousel.Item><img src={Customer} alt=''/></Carousel.Item>
+          </Carousel>
         </div>
        <div>
        <Container>
           <HomeProducts products={products}/>
+          <International />
+          <InHome />
+          <InBeauty />
+          <Stores />
         </Container>
-        <International />
-        <InHome />
-        <InBeauty />
-        <Stores />
+      
        </div>
         
     </div>

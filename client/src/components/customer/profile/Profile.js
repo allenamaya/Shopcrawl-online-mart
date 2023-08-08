@@ -7,10 +7,10 @@ const Profile = () => {
   return (
     <div>
         <Container>
-            <h3>My Profile</h3>
+            <h3 style={{backgroundColor: "rgb(251,247,241)"}}>My Profile</h3>
             <Form className='user-form'>
                 <Form.Group>
-                    <Form.Label ><img className='profile-image' src='https://storage.prompt-hunt.workers.dev/clf1xfct50006l308toffx3dy_1' alt='Profile pic' /></Form.Label>
+                    <Form.Label ><img className='profile-image' src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png' alt='Profile pic' /></Form.Label>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label><h4>Name: {currentCustomer.name}</h4></Form.Label>

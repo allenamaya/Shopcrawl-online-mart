@@ -1,10 +1,12 @@
 import React, {useContext, useState} from 'react'
-import { Form, Container, Button } from 'react-bootstrap'
+import { Form, Container, Button, Alert } from 'react-bootstrap'
 import ProductsContext from '../context/ProductsContext'
 import { useNavigate } from 'react-router-dom'
 
 const SignIn = () => {
   const {setCurrentCustomer} = useContext(ProductsContext)
+  const [show, setShow] = useState(false)
+  const [errorShow, setErrorShow] = useState(false)
   const navigate = useNavigate()
   const [formData, seFormData] = useState({
     email: "",
@@ -24,20 +26,38 @@ function signIn(){
     body: JSON.stringify(formData)
   }).then(res => {
     if(res.ok){
+      seFormData({
+        email: "",
+        password: ""
+      })
       res.json().then(cust => {
         setCurrentCustomer(cust);
-        navigate('/');
+        setShow(true)
+        setTimeout(() => {navigate('/');}, 1500)
+        
 
       })
     }else{
-      alert("Error");
-      navigate('/')
+      seFormData({
+        email: "",
+        password: ""
+      })
+      setErrorShow(true);
+      setTimeout(() => {navigate('/sign-in'); setErrorShow(false)}, 1500)
+      
     }
   }
   )
 }
   return (
-    <Container>
+    <div>
+      <Container>
+      <Alert show={show} variant="success" dismissible>
+        <Alert.Heading>Login success!</Alert.Heading>
+      </Alert>
+      <Alert show={errorShow} variant="danger" dismissible>
+        <Alert.Heading>Invalid credentials !</Alert.Heading>
+      </Alert>
       <Form className='user-form'>
       <h2><i class="bi bi-person-circle"></i></h2>
         <Form.Group>
@@ -55,6 +75,11 @@ function signIn(){
         </Form.Group>
       </Form>
     </Container>
+    <div>
+    
+    </div>
+    </div>
+    
   )
 }
 

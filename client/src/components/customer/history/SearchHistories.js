@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import SingleHistory from './SingleHistory'
 import { Container, Table } from 'react-bootstrap'
+import uniqBy from 'lodash/uniqBy'
 
 const SearchHistories = () => {
 
@@ -20,18 +21,21 @@ const SearchHistories = () => {
   useEffect(() => {
     fetchHistories()
   }, [])
+
   if(histories){
+    let uniqHistories = uniqBy(histories, 'title')
+    console.log(uniqHistories)
      return (
     <div className='histories-container'>
       <Container>
-        <h4>My search history</h4>
-        <Table>
+        <h4 style={{backgroundColor: "rgb(251,247,241)"}}>My search history</h4>
+        <Table striped bordered variant='light'>
           <thead>
             <th></th>
             <th><h5>Title</h5></th>
           </thead>
           <tbody>
-             {histories.map(history => <SingleHistory history= {history}/>)}
+             {uniqHistories.map((history, index )=> <SingleHistory history= {history} index={index}/>)}
           </tbody>
         </Table>
       </Container> 

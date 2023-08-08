@@ -48,8 +48,10 @@ const Search = () => {
   async function logOut(){
     let response = await fetch("/logout", {method: "DELETE"})
     setCurrentCustomer(null);
-    console.log(response)
-    navigate("/");
+    console.log(response);
+    navigate("/logging-out")
+    setTimeout(() => {navigate("/");}, 3000)
+    
   }
 
   
@@ -65,11 +67,7 @@ const Search = () => {
                     </Offcanvas.Title>
           </Offcanvas.Header>
             <Offcanvas.Body>
-            {currentCustomer ? (
-            <Navbar.Brand className='app-brand'>
-              <h1><i class="bi bi-person-check"></i> {currentCustomer.name}</h1>
-            </Navbar.Brand>
-          ) : (
+          
             <Navbar.Brand className='app-brand'>
             <Nav>
               <img src={Logo} alt='Logo' className='brand-img'/>
@@ -77,7 +75,7 @@ const Search = () => {
             </Nav>
             
             </Navbar.Brand>
-          )}
+       
           
             <Nav className="justify-content-center flex-grow-1">
                 {/* */}
@@ -98,21 +96,48 @@ const Search = () => {
       
                
                {currentCustomer ? (
-                <>
+
+                <>  
+                <div className='customer-login'><h2><i class="bi bi-person-check"></i> {currentCustomer.name}</h2></div>
+                 
+                  <Dropdown className='user-dropdown' >
+                    <Dropdown.Toggle variant='warning'>
+                    <i class="bi bi-list"></i>
+                    </Dropdown.Toggle>
+                    <div className='user-dropdown-menu'>
+                    <Dropdown.Menu  >
+                      <Dropdown.Item>
+                        <h4>Hi {currentCustomer.name}</h4>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <LinkContainer to="/profile">
+                        <Nav.Link>My Profile</Nav.Link>
+                      </LinkContainer>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <LinkContainer to='/history' >
+                          <Nav.Link>
+                           My History
+                          </Nav.Link>
+                        </LinkContainer>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <LinkContainer to={''}>
+                          <Nav.Link onClick={logOut} style={{background: "rgb(128,122,5)"}}>Logout</Nav.Link>
+                        </LinkContainer>
+                      </Dropdown.Item>
+
+                    </Dropdown.Menu>
+                    </div>
+                    
+                  </Dropdown>
                   
-                    <LinkContainer to="/profile">
-                      <Nav.Link>
-                      <Button style={{marginRight: "20px", background: "rgb(43,16,55)", border: "none"}} >Profile</Button></Nav.Link>
-                    </LinkContainer>
+                    
  
-                    <LinkContainer to='/history' >
-                    <Nav.Link>
-                       <Button variant='warning' style={{marginRight: "20px"}}>My History</Button>
-                    </Nav.Link>
-                  </LinkContainer>
+                    
                   
                   
-                  <Button variant='success' onClick={logOut} style={{background: "rgb(128,122,5)"}}>Logout</Button>
+                  
                </>
                 
                ) : (<Nav className='me-auto'>

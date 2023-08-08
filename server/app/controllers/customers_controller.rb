@@ -21,7 +21,7 @@ class CustomersController < ApplicationController
     def my_history 
         customer = Customer.find(session[:customer_id])
         histories = customer.search_histories
-        render json: histories, status: :ok
+        render json: histories.uniq, status: :ok
     end
 
     private 
