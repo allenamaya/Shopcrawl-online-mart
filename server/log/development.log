@@ -11530,3 +11530,42 @@ Completed 200 OK in 26ms (Views: 24.9ms | ActiveRecord: 1.0ms | Allocations: 339
 Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.2ms | Allocations: 2433)
 
 
+Started GET "/auth" for 127.0.0.1 at 2023-08-08 11:05:51 +0300
+Started GET "/electronics" for 127.0.0.1 at 2023-08-08 11:05:51 +0300
+Started GET "/fashions" for 127.0.0.1 at 2023-08-08 11:05:51 +0300
+Started GET "/deals" for 127.0.0.1 at 2023-08-08 11:05:51 +0300
+Started GET "/home_products" for 127.0.0.1 at 2023-08-08 11:05:51 +0300
+Processing by FashionsController#index as */*
+  [1m[36mFashion Load (0.2ms)[0m  [1m[34mSELECT "fashions".* FROM "fashions"[0m
+  ↳ app/controllers/fashions_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.81ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.6ms | Allocations: 2454)
+
+
+Processing by HomeProductsController#index as */*
+Processing by ElectronicsController#index as */*
+  [1m[36mHomeProduct Load (0.3ms)[0m  [1m[34mSELECT "home_products".* FROM "home_products"[0m
+Processing by DealsController#index as */*
+  ↳ app/controllers/home_products_controller.rb:3:in `index'
+  [1m[36mElectronic Load (0.2ms)[0m  [1m[34mSELECT "electronics".* FROM "electronics"[0m
+  [1m[36mDeal Load (0.2ms)[0m  [1m[34mSELECT "deals".* FROM "deals"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.82ms)
+  ↳ app/controllers/electronics_controller.rb:4:in `index'
+  ↳ app/controllers/deals_controller.rb:3:in `index'
+Processing by CustomersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.88ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.3ms | Allocations: 6811)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.96ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.6ms | Allocations: 8355)
+
+
+Completed 401 Unauthorized in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1621)
+
+
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.6ms | Allocations: 7488)
+
+
