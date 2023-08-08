@@ -11347,3 +11347,186 @@ No serializer found for resource: {:site=>"JUMIA", :image=>"https://ke.jumia.is/
 Completed 200 OK in 12296ms (Views: 45.8ms | Allocations: 45855)
 
 
+Started GET "/fashions" for 127.0.0.1 at 2023-08-07 11:31:14 +0300
+Started GET "/deals" for 127.0.0.1 at 2023-08-07 11:31:14 +0300
+Started GET "/home_products" for 127.0.0.1 at 2023-08-07 11:31:14 +0300
+Started GET "/electronics" for 127.0.0.1 at 2023-08-07 11:31:14 +0300
+Started GET "/auth" for 127.0.0.1 at 2023-08-07 11:31:14 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FashionsController#index as */*
+Processing by ElectronicsController#index as */*
+Processing by DealsController#index as */*
+Processing by HomeProductsController#index as */*
+Processing by CustomersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 8ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 1360)
+
+
+  [1m[36mFashion Load (0.2ms)[0m  [1m[34mSELECT "fashions".* FROM "fashions"[0m
+  [1m[36mHomeProduct Load (0.1ms)[0m  [1m[34mSELECT "home_products".* FROM "home_products"[0m
+  [1m[36mDeal Load (0.1ms)[0m  [1m[34mSELECT "deals".* FROM "deals"[0m
+  ↳ app/controllers/deals_controller.rb:3:in `index'
+  ↳ app/controllers/fashions_controller.rb:3:in `index'
+  ↳ app/controllers/home_products_controller.rb:3:in `index'
+  [1m[36mElectronic Load (0.2ms)[0m  [1m[34mSELECT "electronics".* FROM "electronics"[0m
+  ↳ app/controllers/electronics_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.4ms)
+Completed 200 OK in 98ms (Views: 67.3ms | ActiveRecord: 0.7ms | Allocations: 33315)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.0ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.24ms)
+Completed 200 OK in 101ms (Views: 71.5ms | ActiveRecord: 1.0ms | Allocations: 33130)
+
+
+Completed 200 OK in 105ms (Views: 75.6ms | ActiveRecord: 1.1ms | Allocations: 33463)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.56ms)
+Completed 200 OK in 113ms (Views: 82.6ms | ActiveRecord: 1.4ms | Allocations: 35415)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-08-07 11:33:38 +0300
+Processing by ProductsController#search_products as */*
+  Parameters: {"search_term"=>"dining", "product"=>{"search_term"=>"dining"}}
+No serializer found for resource: {:site=>"JUMIA", :image=>"https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/67/3019411/1.jpg?5892", :title=>"Luminarc 6Pcs Dinner Plates Ceramic Black Carine - ", :price=>3482, :link=>"https://www.jumia.co.ke/luminarc-6pcs-dinner-plates-ceramic-black-carine-dinner-set-114910376.html"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (15.55ms)
+Completed 200 OK in 15169ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 52523)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-08-07 11:35:08 +0300
+Processing by ProductsController#search_products as */*
+  Parameters: {"search_term"=>"toys", "product"=>{"search_term"=>"toys"}}
+No serializer found for resource: {:site=>"JUMIA", :image=>"https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/70/3971201/1.jpg?5107", :title=>"Generic Rubik'sRubic Magic Speed Cube Game Stress R", :price=>270, :link=>"https://www.jumia.co.ke/generic-rubiksrubic-magic-speed-cube-game-stress-reliever-102179307.html"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (41.01ms)
+Completed 200 OK in 18728ms (Views: 45.9ms | ActiveRecord: 0.0ms | Allocations: 46960)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-08-07 11:35:48 +0300
+Processing by ProductsController#search_products as */*
+  Parameters: {"search_term"=>"gaming", "product"=>{"search_term"=>"gaming"}}
+No serializer found for resource: {:site=>"JUMIA", :image=>"https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/10/715237/1.jpg?9485", :title=>"VR SHINECON 3D Virtual Reality Box With A Remote", :price=>1950, :link=>"https://www.jumia.co.ke/3d-virtual-reality-box-with-a-remote-generic-mpg432442.html"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (30.76ms)
+Completed 200 OK in 13019ms (Views: 33.0ms | ActiveRecord: 0.0ms | Allocations: 49595)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-08-07 11:39:13 +0300
+Processing by ProductsController#search_products as */*
+  Parameters: {"search_term"=>"beauty", "product"=>{"search_term"=>"beauty"}}
+No serializer found for resource: {:site=>"JUMIA", :image=>"https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/75/5171341/1.jpg?4178", :title=>"Fashion Dainely Belt Breathable Back Support Belt H", :price=>1305, :link=>"https://www.jumia.co.ke/fashion-dainely-belt-breathable-back-support-belt-health-accessories-143171557.html"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (37.0ms)
+Completed 200 OK in 12917ms (Views: 38.2ms | Allocations: 50629)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-08-07 11:39:32 +0300
+Processing by ProductsController#search_products as */*
+  Parameters: {"search_term"=>"gaming", "product"=>{"search_term"=>"gaming"}}
+No serializer found for resource: {:site=>"JUMIA", :image=>"https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/10/715237/1.jpg?9485", :title=>"VR SHINECON 3D Virtual Reality Box With A Remote", :price=>1950, :link=>"https://www.jumia.co.ke/3d-virtual-reality-box-with-a-remote-generic-mpg432442.html"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (9.25ms)
+Completed 200 OK in 12400ms (Views: 9.9ms | Allocations: 49872)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-08-07 11:41:56 +0300
+Processing by ProductsController#search_products as */*
+  Parameters: {"search_term"=>"grocery", "product"=>{"search_term"=>"grocery"}}
+No serializer found for resource: {:site=>"JUMIA", :image=>"https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/85/4050351/1.jpg?3429", :title=>"Generic Women Cosmetic Bag Plaid Toiletries Travel ", :price=>1920, :link=>"https://www.jumia.co.ke/generic-women-cosmetic-bag-plaid-toiletries-travel-storage-bag-pu-leather-portable-153050458.html"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (10.27ms)
+Completed 200 OK in 12847ms (Views: 11.1ms | Allocations: 50148)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-08-07 12:27:52 +0300
+Processing by ProductsController#search_products as */*
+  Parameters: {"search_term"=>"beauty", "product"=>{"search_term"=>"beauty"}}
+No serializer found for resource: {:site=>"JUMIA", :image=>"https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/75/5171341/1.jpg?4178", :title=>"Fashion Dainely Belt Breathable Back Support Belt H", :price=>1305, :link=>"https://www.jumia.co.ke/fashion-dainely-belt-breathable-back-support-belt-health-accessories-143171557.html"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (62.18ms)
+Completed 200 OK in 13645ms (Views: 68.3ms | Allocations: 47794)
+
+
+Started POST "/search" for 127.0.0.1 at 2023-08-07 12:29:18 +0300
+Processing by ProductsController#search_products as */*
+  Parameters: {"search_term"=>"beauty", "product"=>{"search_term"=>"beauty"}}
+No serializer found for resource: {:site=>"JUMIA", :image=>"https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/75/5171341/1.jpg?4178", :title=>"Fashion Dainely Belt Breathable Back Support Belt H", :price=>1305, :link=>"https://www.jumia.co.ke/fashion-dainely-belt-breathable-back-support-belt-health-accessories-143171557.html"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (16.67ms)
+Completed 200 OK in 12839ms (Views: 17.6ms | Allocations: 52352)
+
+
+Started GET "/auth" for 127.0.0.1 at 2023-08-08 09:44:09 +0300
+Started GET "/deals" for 127.0.0.1 at 2023-08-08 09:44:09 +0300
+Started GET "/fashions" for 127.0.0.1 at 2023-08-08 09:44:09 +0300
+Started GET "/electronics" for 127.0.0.1 at 2023-08-08 09:44:09 +0300
+Started GET "/home_products" for 127.0.0.1 at 2023-08-08 09:44:09 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FashionsController#index as */*
+Processing by HomeProductsController#index as */*
+Processing by CustomersController#show as */*
+Processing by DealsController#index as */*
+Processing by ElectronicsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 15ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 2465)
+
+
+  [1m[36mFashion Load (0.2ms)[0m  [1m[34mSELECT "fashions".* FROM "fashions"[0m
+  [1m[36mElectronic Load (0.2ms)[0m  [1m[34mSELECT "electronics".* FROM "electronics"[0m
+  ↳ app/controllers/electronics_controller.rb:4:in `index'
+  [1m[36mHomeProduct Load (0.2ms)[0m  [1m[34mSELECT "home_products".* FROM "home_products"[0m
+  [1m[36mDeal Load (0.2ms)[0m  [1m[34mSELECT "deals".* FROM "deals"[0m
+  ↳ app/controllers/fashions_controller.rb:3:in `index'
+  ↳ app/controllers/home_products_controller.rb:3:in `index'
+  ↳ app/controllers/deals_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.2ms)
+Completed 200 OK in 101ms (Views: 67.8ms | ActiveRecord: 1.4ms | Allocations: 32664)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.49ms)
+Completed 200 OK in 112ms (Views: 66.0ms | ActiveRecord: 1.1ms | Allocations: 34108)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.21ms)
+Completed 200 OK in 117ms (Views: 75.6ms | ActiveRecord: 0.7ms | Allocations: 35563)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.34ms)
+Completed 200 OK in 108ms (Views: 72.2ms | ActiveRecord: 1.6ms | Allocations: 34847)
+
+
+Started GET "/electronics" for 127.0.0.1 at 2023-08-08 09:46:48 +0300
+Started GET "/auth" for 127.0.0.1 at 2023-08-08 09:46:48 +0300
+Started GET "/deals" for 127.0.0.1 at 2023-08-08 09:46:48 +0300
+Started GET "/fashions" for 127.0.0.1 at 2023-08-08 09:46:48 +0300
+Started GET "/home_products" for 127.0.0.1 at 2023-08-08 09:46:48 +0300
+Processing by ElectronicsController#index as */*
+  [1m[36mElectronic Load (0.3ms)[0m  [1m[34mSELECT "electronics".* FROM "electronics"[0m
+  ↳ app/controllers/electronics_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.9ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 2312)
+
+
+Processing by FashionsController#index as */*
+  [1m[36mFashion Load (0.2ms)[0m  [1m[34mSELECT "fashions".* FROM "fashions"[0m
+  ↳ app/controllers/fashions_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.1ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 2953)
+
+
+Processing by CustomersController#show as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 246)
+
+
+Processing by HomeProductsController#index as */*
+  [1m[36mHomeProduct Load (1.0ms)[0m  [1m[34mSELECT "home_products".* FROM "home_products"[0m
+  ↳ app/controllers/home_products_controller.rb:3:in `index'
+Processing by DealsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.3ms)
+Completed 200 OK in 26ms (Views: 24.9ms | ActiveRecord: 1.0ms | Allocations: 3396)
+
+
+  [1m[36mDeal Load (0.2ms)[0m  [1m[34mSELECT "deals".* FROM "deals"[0m
+  ↳ app/controllers/deals_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.98ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.2ms | Allocations: 2433)
+
+
