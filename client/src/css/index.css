@@ -1,7 +1,7 @@
 body{
     text-align: center;
-    /* font-family: 'Kumbh Sans', sans-serif; 
-    font-family: 'Trirong', sans-serif;  */
+    font-family: 'Kumbh Sans', sans-serif; 
+    font-family: 'Trirong', sans-serif;  
     font-family: 'Nunito Sans', sans-serif;
     position: relative;
 }
@@ -290,13 +290,12 @@ a{
   margin-bottom: 150px;
 }
 .home-banner{
-   background: url(https://e1.pxfuel.com/desktop-wallpaper/996/973/desktop-wallpaper-online-shopping-monochrome-online-business-concepts-online-store-concepts-laptop-with-resolution-2880x1800-high-quality-online-store.jpg);
-   background-size: cover;
-   background-repeat: no-repeat;
+   margin-bottom: 100px;
 }
 .home-banner > *{
   margin: auto;
 }
+
 .loading{
   padding-bottom: 600px;
 }
@@ -334,17 +333,18 @@ a{
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 200px;
 }
 .home-product{
   width: 300px;
   height: 350px;
   margin: 5px;
+  border: none;
 }
 .home-product img{
   height: 250px;
   width: 300px;
   height: 300px;
-  border-radius: 50%;
 }
 .fProduct-link:hover > *{
   background-color: rgb(230, 229, 229);
@@ -371,7 +371,7 @@ a{
 .popular-products img{
   width: 250px;
   height: 250px;
-  border-radius: 50%;
+  border-radius: 3.5%;
 }
 .popular-products > * {
   margin: 20px;
