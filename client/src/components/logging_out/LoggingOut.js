@@ -1,25 +1,20 @@
 import React from 'react'
 
 const LoggingOut = () => {
+
   return (
     <div className='logging-out'>
-    <h1>
-    <span class="let1">l</span>  
-    <span class="let2">o</span>  
-    <span class="let3">g</span>  
-    <span class="let4">g</span>  
-    <span class="let5">i</span>  
-    <span class="let6">n</span>  
-    <span class="let7">g</span>  
-    <span class="let8 space"> </span>  
-    <span class="let9">y</span>  
-    <span class="let10">o</span>  
-    <span class="let11">u</span>  
-    <span class="let12 space"> </span>  
-    <span class="let13">o</span>  
-    <span class="let14">u</span>  
-    <span class="let15">t</span>  
-  </h1>
+      <span class="wrapper">
+        <span class="circle circle-1"><h1>G</h1> </span>
+        <span class="circle circle-2"><h1>o</h1> </span>
+        <span class="circle circle-3"><h1>o</h1></span>
+        <span class="circle circle-4"><h1>d</h1></span>
+        <span class="circle circle-5"><h1>b</h1></span>
+        <span class="circle circle-6"><h1>y</h1></span>
+        <span class="circle circle-7"><h1>e</h1></span>
+        <span class="circle circle-8"></span>
+      </span>
+
     </div>
   )
 }

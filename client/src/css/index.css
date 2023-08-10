@@ -21,6 +21,7 @@ body{
   color:rgb(24, 117, 6);
 }
 .main-content{
+    position: relative;
     margin-top: 20px;
     padding-bottom: 600px;
 }
@@ -56,9 +57,9 @@ a{
     justify-content: flex-start;
 }
 .product-image img{
-    width: 200px;
-    height: 230px;
-    border-radius: 15px;
+    width: 250px;
+    height: 170px;
+    border-radius: 3.5%;
 }
 .product-details{
   display: flex;
@@ -114,7 +115,9 @@ a{
 }
 .user-form-btn{
   background-color: #2C4B79;
-  width: 30%;
+  width:fit-content;
+  font-size: 18px;
+  color: #e3f0ed;
   border: none;
 }
 .user-form-btn:hover{
@@ -158,9 +161,8 @@ a{
   margin: 20px;
 }
 .stores img{
-  border-radius: 50%;
   width: 200px;
-  height: 200px;
+  height: 230px;
 }
 .store{
   border: none;
@@ -259,7 +261,7 @@ a{
   justify-content: flex-start;
   flex-wrap: wrap;
   font-family: 'Trirong', sans-serif;
-  color: rgb(7,89,158);
+  color: rgb(0, 25, 123);
 }
 .banner p{
   font-size: 25px;
@@ -294,7 +296,7 @@ a{
   padding-bottom: 600px;
 }
 .fProducts-display{
-  margin-top: 30px;
+  margin-top: 280px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -313,8 +315,21 @@ a{
   padding-bottom: 300px;
 }
 .profile-image{
-  height: 250px;
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
+}
+.user-profile{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.user-profile > *{
+  padding: 20px;
+}
+.profile-details > *{
+  margin: 20px;
 }
 .advert-image{
   height: 300px;
@@ -352,6 +367,9 @@ a:hover{
 .error-page{
   padding-bottom: 400px;
 }
+.error-page h1{
+  margin-top: 300px;
+}
 
 .popular-container > * {
   margin-top: 20px;
@@ -373,6 +391,8 @@ a:hover{
 }
 .user-dropdown{
   font-size: 20px;
+  padding: 0;
+  margin-left: -40px;
 }
 .user-dropdown-menu{
   margin-right: 180px;
@@ -384,127 +404,73 @@ a:hover{
   color: #2C4B79;
 }
 .logging-out{
-  padding-bottom: 500px;
+  margin-top: 300px;
+  padding-bottom: 600px;
 }
-.cusutomer-login{
+.cusutomer-login h2{
   font-size: 16px;
-  margin-right: 0px;
 }
+.form-control{
+  font-size: 20px;
+}
+
+
 
 /* Logging out */
-.logging-out h1 {
-  margin-top: 150px;
-  padding: 0;
-  font-family: ‘Arial Narrow’, sans-serif;
-  font-weight: 100;
-  font-size: 1.1em;
-  color: #053f4e;
-  font-size: 25px;
+.wrapper{
+  position:relative;
+  transform:translate(-50%, -50%); 
 }
-
-.logging-out span {
-  position: relative;
-  top: 0.63em;  
+.circle{
   display: inline-block;
-  text-transform: uppercase;  
-  opacity: 0;
-  transform: rotateX(-90deg);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  animation: loading 1.5s cubic-bezier(.8, .5, .2, 1.4) infinite;
+  transform-origin: bottom center;
+  position: relative;
+  margin-right: 20px;
 }
-
-.let1 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.2s;
+.circle h1{
+  font-size: 50px;
 }
-
-.let2 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.3s;
+@keyframes loading{
+  0%{
+    transform: translateY(0px);
+    color: #cdaf0a;
+  }
+  50%{
+    transform: translateY(50px);
+    color: #ef584a;
+  }
+  100%{
+    transform: translateY(0px);
+    color: #2ec208;
+  }
 }
-
-.let3 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.4s;
+.circle-1{
+  animation-delay: 0.1s;
 }
-
-.let4 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.5s;
-
+.circle-2{
+  animation-delay: 0.2s;
 }
-
-.let5 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.6s;
+.circle-3{
+  animation-delay: 0.3s;
 }
-
-.let6 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.7s;
+.circle-4{
+  animation-delay: 0.4s;
 }
-
-.let7 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.8s;
+.circle-5{
+  animation-delay: 0.5s;
 }
-
-.let8 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.9s;
+.circle-6{
+  animation-delay: 0.6s;
 }
-.let9 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 2.0s;
+.circle-7{
+  animation-delay: 0.7s;
 }
-.let10 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 2.1s;
-}
-.let11{
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 2.2s;
-}
-.let12 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 2.3s;
-}
-.let13 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 2.4s;
-}
-.let14 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 2.5s;
-}
-.let15 {
-  animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 2.6s;
-}
-.space{
-  padding: 20px;
-}
-
-
-@keyframes drop {
-    10% {
-        opacity: 0.5;
-    }
-    20% {
-        opacity: 1;
-        top: 3.78em;
-        transform: rotateX(-360deg);
-    }
-    80% {
-        opacity: 1;
-        top: 3.78em;
-        transform: rotateX(-360deg);
-    }
-    90% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 0;
-        top: 6.94em
-    }
+.circle-8{
+  animation-delay: 0.8s;
 }
 
 .ring

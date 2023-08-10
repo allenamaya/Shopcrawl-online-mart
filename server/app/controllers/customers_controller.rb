@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-
+    wrap_parameters format: []
     before_action :authorize
     skip_before_action :authorize, only:[:create]
 
@@ -15,7 +15,17 @@ class CustomersController < ApplicationController
     def create
         customer = Customer.create!(customer_params)
         session[:customer_id] = customer.id
-        render json: customer, status: :created 
+        render json: customer, status: :created
+    end
+
+    def update 
+        customer = Customer.find(params[:id])
+        if customer
+            customer.update!(customer_params)
+            render json: customer, status: :ok
+        else  
+            render json: {error: "Not found"}
+        end
     end
 
     def my_history 
@@ -27,7 +37,7 @@ class CustomersController < ApplicationController
     private 
 
     def customer_params 
-        params.permit(:name, :email, :password, :password_confirmation)
+        params.permit(:id, :name, :email, :password, :password_confirmation)
     end
 
     def authorize 

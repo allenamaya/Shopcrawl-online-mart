@@ -35,6 +35,8 @@ const Search = () => {
       let  data = await response.json();
       console.log(data)
       setProducts([...data])
+      }else{
+        navigate('/error')
       }
       formData.search_term = " "
       }
@@ -97,10 +99,10 @@ const Search = () => {
                
                {currentCustomer ? (
 
-                <>  
-                <div className='customer-login'><h2><i class="bi bi-person-check"></i> {currentCustomer.name}</h2></div>
-                 
-                  <Dropdown className='user-dropdown' >
+              
+                <Nav className='justify-content-flex-end'>
+                <h2><i class="bi bi-person-check"></i> {currentCustomer.name}</h2>
+                <Dropdown className='user-dropdown' >
                     <Dropdown.Toggle variant='warning'>
                     <i class="bi bi-list"></i>
                     </Dropdown.Toggle>
@@ -131,14 +133,7 @@ const Search = () => {
                     </div>
                     
                   </Dropdown>
-                  
-                    
- 
-                    
-                  
-                  
-                  
-               </>
+                </Nav>
                 
                ) : (<Nav className='me-auto'>
                 {/* <Button className='account-btn' variant='warning'> */}
@@ -195,7 +190,7 @@ const Search = () => {
       </Nav.Item>
       <Nav.Item>
         <LinkContainer to='/fashion'>
-            <Nav.Link><i class="bi bi-handbag"></i>Fashion</Nav.Link>
+            <Nav.Link><i class="bi bi-handbag"></i>Wardrobe</Nav.Link>
         </LinkContainer> 
       </Nav.Item>
     </Nav>

@@ -33,7 +33,7 @@ function signIn(){
       res.json().then(cust => {
         setCurrentCustomer(cust);
         setShow(true)
-        setTimeout(() => {navigate('/');}, 1500)
+        setTimeout(() => {navigate('/');}, 1000)
         
 
       })
