@@ -1,8 +1,10 @@
-
 # Shopcrawl Online Store App
-![Group 3](https://github.com/allenamaya/Shopcrawl-online-mart/assets/126647363/12adc233-5b8e-462f-972f-0905fc405b35)
+
+![Group 3](https://github.com/allenamaya/Shopcrawl-online-mart/assets/126647363/df945a4b-7084-4778-bdaf-2535fc8869cc)
+
 
 Shopcrawl is an innovative online store app that aims to revolutionize the way users shop online. The app offers a diverse range of products across different categories, providing customers with a convenient and enjoyable shopping experience.
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -50,3 +52,4 @@ We welcome contributions to improve the Shopcrawl app! To contribute, follow the
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
